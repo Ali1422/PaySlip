@@ -1,0 +1,35 @@
+import time
+print("*****************************")
+print("welcome to the pay calculator")
+print("*****************************")
+name = input("please enter your name")
+time.sleep(2)
+date = int(input("please enter the current date in numericals: "))
+time.sleep(2)           
+HourlyRate= float(input("please enter how much you earn per hour:"))
+time.sleep(2)
+Hours = float(input("please enter if how many hours you have worked this month:"))
+time.sleep(2)
+Question = input("Has your pay been reduced for any of those hours?")
+if Question == "yes":
+	reduction = float(input("please enter the amount of hours you have had reduced pay in:"))
+	time.sleep(2)
+	ReductionPay = float(input("please enter your pay for these hours:"))
+	OverallReduction = reduction * ReductionPay
+	Hours = Hours - reduction
+elif Question == "no":
+	OverallReduction = 0
+else:
+	print("invalid answer please try again and enter yes or no")
+	quit()
+OverallPay = HourlyRate * Hours
+OverallPayy = OverallPay + OverallReduction
+print("NAME:",name)
+time.sleep(2)
+print("DATE:",date)
+time.sleep(2)        
+print("This month you are owed",OverallPayy)
+
+
+
+			  
